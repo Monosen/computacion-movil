@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,9 +51,14 @@ public class MainActivity extends AppCompatActivity {
             tv1.setText(resu);
         }
         if (r4.isChecked()==true) {
-            int divicion=nro1/nro2;
-            String resu=String.valueOf(divicion);
-            tv1.setText(resu);
+            if(nro2 != 0){
+                int divicion=nro1/nro2;
+                String resu=String.valueOf(divicion);
+                tv1.setText(resu);
+            } else {
+                Toast.makeText(this, "No se puede dividir entre cero", Toast.LENGTH_LONG).show();
+            }
+
         }
     }
 }
