@@ -6,6 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 @RestController
 public class UserController {
 
@@ -30,8 +35,7 @@ public class UserController {
     @GetMapping("/consultarAll")
     public ResponseEntity<?> consultarByUser(){
 
-        return ResponseEntity.ok(service.buscarTdoso()
-        );
+        return ResponseEntity.ok(service.buscarTdoso());
     }
 
     // update employee rest api

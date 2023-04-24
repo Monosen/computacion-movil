@@ -10,6 +10,16 @@ public class Empleado {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    public Empleado(Long id, String nombre, String password, String email) {
+        this.id = id;
+        this.nombre = nombre;
+        this.password = password;
+        this.email = email;
+    }
+
+    public Empleado() {
+    }
+
     @Column(name = "nombre")
     private String nombre;
 
@@ -47,5 +57,15 @@ public class Empleado {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Empleado{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
